@@ -94,4 +94,70 @@ class AppTextStyles {
     height: 1.2,
     color: AppColors.badge,
   );
+
+  static const todayAppBar = TextStyle(
+    fontFamily: StringConst.appFontFamily,
+    fontSize: 18,
+    fontWeight: .w500,
+    height: 1.2,
+    color: AppColors.inkMuted,
+  );
+
+  static const tasksToday = TextStyle(
+    fontFamily: StringConst.appFontFamily,
+    fontSize: 16,
+    fontWeight: .w400,
+    height: 1.2,
+    color: AppColors.muted400,
+  );
+
+  static const weekDayNumber = TextStyle(
+    fontFamily: StringConst.appFontFamily,
+    fontSize: 14,
+    fontWeight: .w400,
+    height: 1.2,
+    letterSpacing: -0.28,
+    color: AppColors.muted500,
+  );
+
+  static const weekDayNumberSelected = TextStyle(
+    fontFamily: StringConst.appFontFamily,
+    fontSize: 14,
+    fontWeight: .w700,
+    height: 1.2,
+    letterSpacing: -0.28,
+    color: AppColors.white,
+  );
+
+  static const weekDayLabel = TextStyle(
+    fontFamily: StringConst.appFontFamily,
+    fontSize: 11,
+    fontWeight: .w400,
+    height: 1.2,
+    color: AppColors.muted500,
+  );
+
+  static const weekDayLabelSelected = TextStyle(
+    fontFamily: StringConst.appFontFamily,
+    fontSize: 11,
+    fontWeight: .w400,
+    height: 1.2,
+    color: AppColors.white,
+  );
+
+  static const timelineTime = TextStyle(
+    fontFamily: StringConst.appFontFamily,
+    fontSize: 12,
+    fontWeight: .w400,
+    height: 1.2,
+    color: AppColors.muted500,
+  );
+
+  static const timelineCardTitle = TextStyle(
+    fontFamily: StringConst.appFontFamily,
+    fontSize: 16,
+    fontWeight: .w500,
+    height: 1.2,
+    color: AppColors.inkDark,
+  );
 }

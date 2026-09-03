@@ -23,4 +23,8 @@ class AppColors {
   static const memberCoral = Color(0xFFFAB3AF);
   static const memberSage = Color(0xFFBACDA3);
   static const memberBlue = Color(0xFFAFC5DE);
+  static const calendarButton = Color(0xFFFFEACB);
+  static const selectedDay = Color(0xFF212121);
+  static const timelinePurple = Color(0xFFEBE2FD);
+  static const timelineCyan = Color(0xFFDEECEC);
 }

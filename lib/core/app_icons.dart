@@ -6,4 +6,5 @@ class AppIcons {
   static const icFilter = '${_iconsPath}ic_filter.svg';
   static const icClock = '${_iconsPath}ic_clock.svg';
   static const icPhone = '${_iconsPath}ic_phone.svg';
+  static const icBack = '${_iconsPath}ic_back.svg';
 }

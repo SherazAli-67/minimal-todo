@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:minimal_todo/constants/string_constant.dart';
 import 'package:minimal_todo/core/app_data.dart';
 import 'package:minimal_todo/core/app_textstyles.dart';
+import 'package:minimal_todo/router/app_router.dart';
 import 'package:minimal_todo/screens/home/widgets/category_card.dart';
 import 'package:minimal_todo/screens/home/widgets/home_header.dart';
 import 'package:minimal_todo/screens/home/widgets/ongoing_task_card.dart';
@@ -60,7 +62,7 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ),
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () => context.push(NamedRoutes.today.routeName),
                     child: const Text(
                       StringConst.seeAll,
                       style: AppTextStyles.seeAll,
@@ -76,8 +78,11 @@ class HomeScreen extends StatelessWidget {
                 children: [
                   for (var i = 0; i < AppData.ongoingTasks.length; i++) ...[
                     if (i > 0) const SizedBox(height: 28),
-                    OngoingTaskCard(
-                      task: AppData.ongoingTasks[i],
+                    GestureDetector(
+                      onTap: () => context.push(NamedRoutes.today.routeName),
+                      child: OngoingTaskCard(
+                        task: AppData.ongoingTasks[i],
+                      ),
                     ),
                   ],
                 ],

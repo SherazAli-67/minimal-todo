@@ -1,5 +1,6 @@
 import 'package:go_router/go_router.dart';
 import 'package:minimal_todo/screens/home/home_screen.dart';
+import 'package:minimal_todo/screens/today/today_tasks_screen.dart';
 
 GoRouter router = GoRouter(
   initialLocation: NamedRoutes.home.routeName,
@@ -8,11 +9,16 @@ GoRouter router = GoRouter(
       path: NamedRoutes.home.routeName,
       builder: (_, _) => const HomeScreen(),
     ),
+    GoRoute(
+      path: NamedRoutes.today.routeName,
+      builder: (_, _) => const TodayTasksScreen(),
+    ),
   ],
 );
 
 enum NamedRoutes {
-  home('/home');
+  home('/home'),
+  today('/today');
 
   final String routeName;
 

@@ -12,4 +12,16 @@ void main() {
     expect(find.text(StringConst.ongoingTasks), findsOneWidget);
     expect(find.text('Wallet App Design'), findsOneWidget);
   });
+
+  testWidgets('See all opens today tasks screen', (tester) async {
+    await tester.pumpWidget(const MyApp());
+    await tester.pumpAndSettle();
+
+    await tester.tap(find.text(StringConst.seeAll));
+    await tester.pumpAndSettle();
+
+    expect(find.text(StringConst.todayTasks), findsOneWidget);
+    expect(find.text(StringConst.todayDate), findsOneWidget);
+    expect(find.text('Mobile Wireframing'), findsOneWidget);
+  });
 }

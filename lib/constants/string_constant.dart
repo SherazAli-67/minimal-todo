@@ -9,4 +9,7 @@ class StringConst {
   static const ongoingTasks = 'Ongoing tasks';
   static const seeAll = 'See all';
   static const teamMembers = 'Team members';
+  static const todayTasks = "Today's tasks";
+  static const todayDate = 'August 07';
+  static const tasksToday = '10 task today';
 }

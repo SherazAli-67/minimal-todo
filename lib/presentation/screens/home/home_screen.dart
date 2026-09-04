@@ -23,15 +23,11 @@ class HomeScreen extends StatelessWidget {
               padding: .symmetric(horizontal: 26),
               child: const Column(
                 crossAxisAlignment: .start,
+                spacing: 24,
                 children: [
                   HomeHeader(),
-                  SizedBox(height: 24),
                   SearchFilterBar(),
-                  SizedBox(height: 35),
-                  Text(
-                    StringConst.categories,
-                    style: AppTextStyles.sectionTitle,
-                  ),
+                  Text(StringConst.categories, style: AppTextStyles.sectionTitle,),
                 ],
               ),
             ),
@@ -52,10 +48,7 @@ class HomeScreen extends StatelessWidget {
               child: Row(
                 children: [
                   const Expanded(
-                    child: Text(
-                      StringConst.ongoingTasks,
-                      style: AppTextStyles.sectionTitle,
-                    ),
+                    child: Text(StringConst.ongoingTasks, style: AppTextStyles.sectionTitle,),
                   ),
                   GestureDetector(
                     onTap: () => context.push(NamedRoutes.today.routeName),

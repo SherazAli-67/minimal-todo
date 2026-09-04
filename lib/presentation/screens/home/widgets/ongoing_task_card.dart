@@ -32,26 +32,21 @@ class OngoingTaskCard extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: .start,
                   children: [
-                    Text(
-                      task.title,
-                      style: AppTextStyles.taskTitle,
-                    ),
+                    Text(task.title, style: AppTextStyles.taskTitle,),
                     const SizedBox(height: 14),
-                    Text(
-                      StringConst.teamMembers,
-                      style: AppTextStyles.taskMeta,
-                    ),
+                    Text(StringConst.teamMembers, style: AppTextStyles.taskMeta,),
                     const SizedBox(height: 11),
                     Wrap(
                       spacing: 8,
                       children: [
-                        for (final color in task.memberColors)
+                        for (final member in task.members)
                           Container(
                             width: 25,
                             height: 25,
-                            decoration: BoxDecoration(
-                              color: color,
-                              shape: .circle,
+                            decoration: BoxDecoration(color: member.bgColor, shape: .circle, ),
+                            child: ClipRRect(
+                              borderRadius: .circular(100),
+                              child: Image.network(member.imageUrl),
                             ),
                           ),
                       ],

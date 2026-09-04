@@ -1,38 +1,44 @@
 import 'package:minimal_todo/core/app_colors.dart';
 import 'package:minimal_todo/core/models/category.dart';
 import 'package:minimal_todo/core/models/ongoing_task.dart';
+import 'package:minimal_todo/core/models/team_members_model.dart';
 import 'package:minimal_todo/core/models/timeline_task.dart';
 import 'package:minimal_todo/core/models/week_day.dart';
 
+import 'app_icons.dart';
+
 class AppData {
-  static const categories = [
+  static final categories = [
     Category(
       name: 'Gardening',
       taskCount: 2,
       backgroundColor: AppColors.gardening,
+      image: AppIcons.wateringPlantImg1
     ),
-    Category(
+     Category(
       name: 'Mobile App',
       taskCount: 5,
       backgroundColor: AppColors.mobileApp,
-    ),
-    Category(
+      image: AppIcons.wateringPlantImg2
+     ),
+     Category(
       name: 'Gardening',
       taskCount: 2,
       backgroundColor: AppColors.categoryLilac,
-    ),
+      image: AppIcons.wateringPlantImg1
+     ),
   ];
 
-  static const ongoingTasks = [
+  static List<OngoingTask> ongoingTasks = [
     OngoingTask(
       title: 'Wallet App Design',
       durationLabel: '6d',
       timeRange: '2:30 PM - 7: 00PM',
       progress: 0.46,
-      memberColors: [
-        AppColors.memberCoral,
-        AppColors.memberSage,
-        AppColors.memberBlue,
+      members: [
+
+        TeamMembersModel(bgColor: AppColors.memberCoral, imageUrl: AppIcons.profileUrl1),
+        TeamMembersModel(bgColor: AppColors.memberBlue, imageUrl: AppIcons.profileUrl2),
       ],
       backgroundColor: AppColors.taskLilac,
     ),
@@ -41,12 +47,12 @@ class AppData {
       durationLabel: '4d',
       timeRange: '2:30 PM - 7: 00PM',
       progress: 0.46,
-      memberColors: [
-        AppColors.memberBlue,
-        AppColors.memberCoral,
-        AppColors.memberBlue,
-        AppColors.memberSage,
-        AppColors.memberBlue,
+      members: [
+        TeamMembersModel(bgColor: AppColors.memberBlue, imageUrl: AppIcons.profileUrl1),
+        TeamMembersModel(bgColor: AppColors.memberCoral, imageUrl: AppIcons.profileUrl2),
+        TeamMembersModel(bgColor: AppColors.memberBlue, imageUrl: AppIcons.profileUrl3),
+        TeamMembersModel(bgColor: AppColors.memberSage, imageUrl: AppIcons.profileUrl4),
+        TeamMembersModel(bgColor: AppColors.memberBlue, imageUrl: AppIcons.profileUrl5),
       ],
       backgroundColor: AppColors.taskBeige,
     ),

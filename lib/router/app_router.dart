@@ -1,7 +1,7 @@
 import 'package:go_router/go_router.dart';
-import '../presentation/screens/home/home_screen.dart';
-import '../presentation/screens/today/today_tasks_screen.dart';
-import '../presentation/screens/welcome/welcome_screen.dart';
+import '../presentation/screens/home_screen.dart';
+import '../presentation/screens/today_tasks_screen.dart';
+import '../presentation/screens/welcome_screen.dart';
 
 GoRouter router = GoRouter(
   initialLocation: NamedRoutes.welcome.routeName,

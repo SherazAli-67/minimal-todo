@@ -137,5 +137,7 @@ class AppData {
     WelcomePreviewCard(title: 'Gardening', taskCount: 2, backgroundColor: AppColors.gardening),
     WelcomePreviewCard(title: 'Mobile App', taskCount: 5, backgroundColor: AppColors.mobileApp),
     WelcomePreviewCard(title: 'Meeting', taskCount: 3, backgroundColor: AppColors.categoryLilac),
+    WelcomePreviewCard(title: 'Finance', taskCount: 2, backgroundColor: AppColors.avatarFallback),
+    WelcomePreviewCard(title: 'Dashboard', taskCount: 5, backgroundColor: AppColors.memberBlue),
   ];
 }

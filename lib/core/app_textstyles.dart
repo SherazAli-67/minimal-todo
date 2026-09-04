@@ -160,4 +160,36 @@ class AppTextStyles {
     height: 1.2,
     color: AppColors.inkDark,
   );
+
+  static const welcomeBrand = TextStyle(
+    fontFamily: StringConst.appFontFamily,
+    fontSize: 36,
+    fontWeight: .w700,
+    height: 1.2,
+    color: AppColors.ink,
+  );
+
+  static const welcomeHeadline = TextStyle(
+    fontFamily: StringConst.appFontFamily,
+    fontSize: 22,
+    fontWeight: .w500,
+    height: 1.3,
+    color: AppColors.inkMuted,
+  );
+
+  static const welcomeSubtitle = TextStyle(
+    fontFamily: StringConst.appFontFamily,
+    fontSize: 15,
+    fontWeight: .w400,
+    height: 1.4,
+    color: AppColors.muted700,
+  );
+
+  static const welcomeCta = TextStyle(
+    fontFamily: StringConst.appFontFamily,
+    fontSize: 16,
+    fontWeight: .w600,
+    height: 1.2,
+    color: AppColors.white,
+  );
 }

@@ -4,6 +4,7 @@ import 'package:minimal_todo/core/models/ongoing_task.dart';
 import 'package:minimal_todo/core/models/team_members_model.dart';
 import 'package:minimal_todo/core/models/timeline_task.dart';
 import 'package:minimal_todo/core/models/week_day.dart';
+import 'package:minimal_todo/core/models/welcome_preview_card.dart';
 
 import 'app_icons.dart';
 
@@ -130,5 +131,11 @@ class AppData {
       bgImage: AppIcons.financeDashboardTaskBgImg,
       cardHeight: 105,
     ),
+  ];
+
+  static const welcomePreviewCards = [
+    WelcomePreviewCard(title: 'Gardening', taskCount: 2, backgroundColor: AppColors.gardening),
+    WelcomePreviewCard(title: 'Mobile App', taskCount: 5, backgroundColor: AppColors.mobileApp),
+    WelcomePreviewCard(title: 'Meeting', taskCount: 3, backgroundColor: AppColors.categoryLilac),
   ];
 }

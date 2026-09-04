@@ -12,4 +12,8 @@ class StringConst {
   static const todayTasks = "Today's tasks";
   static const todayDate = 'August 07';
   static const tasksToday = '10 task today';
+  static const welcomeHeadline = 'Organize your day, simply';
+  static const welcomeSubtitle = 'Track pending tasks, categories, and your daily schedule in one calm place.';
+  static const getStarted = 'Get Started';
+  static const skip = 'Skip';
 }

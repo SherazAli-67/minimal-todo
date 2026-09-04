@@ -28,11 +28,7 @@ class TimelineTaskCard extends StatelessWidget {
           Positioned(
             right: -24,
             bottom: -36,
-            child: IgnorePointer(
-              child: _DecorCircles(
-                color: AppColors.ink.withValues(alpha: 0.06),
-              ),
-            ),
+            child: Image.asset(task.bgImage, height: 145,)
           ),
           Padding(
             padding: .only(left: 10, top: 14, right: 10, bottom: 14),
@@ -46,16 +42,20 @@ class TimelineTaskCard extends StatelessWidget {
                         height: 30,
                         child: Stack(
                           children: [
-                            for (var i = 0; i < task.memberColors.length; i++)
+                            for (var i = 0; i < task.members.length; i++)
                               Positioned(
                                 left: i * 27,
                                 child: Container(
                                   width: 30,
                                   height: 30,
                                   decoration: BoxDecoration(
-                                    color: task.memberColors[i],
+                                    color: task.members[i].bgColor,
                                     shape: .circle,
                                     border: .all(color: task.backgroundColor, width: 2),
+                                  ),
+                                  child: ClipOval(
+                                    // borderRadius: .circular(100),
+                                    child: Image.network(task.members[i].imageUrl),
                                   ),
                                 ),
                               ),

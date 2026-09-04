@@ -83,47 +83,51 @@ class AppData {
     '02:00 PM',
   ];
 
-  static const timelineTasks = [
+  static List<TimelineTask> timelineTasks = [
     TimelineTask(
       title: 'Website design with responsive',
-      memberColors: [
-        AppColors.memberCoral,
-        AppColors.memberSage,
-        AppColors.memberBlue,
-        AppColors.memberCoral,
+      members: [
+        TeamMembersModel(bgColor: AppColors.memberCoral, imageUrl: AppIcons.profileUrl1),
+        TeamMembersModel(bgColor: AppColors.memberSage, imageUrl: AppIcons.profileUrl2),
+        TeamMembersModel(bgColor: AppColors.memberBlue, imageUrl: AppIcons.profileUrl3),
+        TeamMembersModel(bgColor: AppColors.memberCoral, imageUrl: AppIcons.profileUrl4),
       ],
       backgroundColor: AppColors.taskBeige,
       cardHeight: 127,
+      bgImage: AppIcons.websiteDesignBgImg
     ),
     TimelineTask(
       title: 'Mobile Wireframing',
-      memberColors: [
-        AppColors.memberCoral,
-        AppColors.memberSage,
-        AppColors.memberBlue,
+      members: [
+        TeamMembersModel(bgColor: AppColors.memberCoral, imageUrl: AppIcons.profileUrl1),
+        TeamMembersModel(bgColor: AppColors.memberSage, imageUrl: AppIcons.profileUrl2),
+        TeamMembersModel(bgColor: AppColors.memberBlue, imageUrl: AppIcons.profileUrl3),
       ],
       backgroundColor: AppColors.mobileApp,
       cardHeight: 105,
+      bgImage: AppIcons.mobileWireFrameTaskBgImg
     ),
     TimelineTask(
       title: 'Meeting with client',
-      memberColors: [
-        AppColors.memberCoral,
-        AppColors.memberSage,
+      members: [
+        TeamMembersModel(bgColor: AppColors.memberCoral, imageUrl: AppIcons.profileUrl1),
+        TeamMembersModel(bgColor: AppColors.memberSage, imageUrl: AppIcons.profileUrl2),
       ],
       backgroundColor: AppColors.timelinePurple,
       cardHeight: 127,
+      bgImage: AppIcons.meetingWithClientTaskBgImg
     ),
     TimelineTask(
       title: 'Finance Dashboard',
-      memberColors: [
-        AppColors.memberCoral,
-        AppColors.memberSage,
-        AppColors.memberBlue,
-        AppColors.memberCoral,
-        AppColors.memberSage,
+      members: [
+        TeamMembersModel(bgColor: AppColors.memberCoral, imageUrl: AppIcons.profileUrl1),
+        TeamMembersModel(bgColor: AppColors.memberSage, imageUrl: AppIcons.profileUrl2),
+        TeamMembersModel(bgColor: AppColors.memberBlue, imageUrl: AppIcons.profileUrl3),
+        TeamMembersModel(bgColor: AppColors.memberCoral, imageUrl: AppIcons.profileUrl4),
+        TeamMembersModel(bgColor: AppColors.memberSage, imageUrl: AppIcons.profileUrl5),
       ],
       backgroundColor: AppColors.timelineCyan,
+      bgImage: AppIcons.financeDashboardTaskBgImg,
       cardHeight: 105,
     ),
   ];

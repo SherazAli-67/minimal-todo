@@ -17,5 +17,10 @@ class AppIcons {
   static const profileUrl4 = 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8cGVvcGxlfGVufDB8fDB8fHww';
   static const profileUrl5 = 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cGVvcGxlfGVufDB8fDB8fHww';
 
+  static const websiteDesignBgImg = '${_iconsPath}website_design_bg1.png';
+  static const mobileWireFrameTaskBgImg = '${_iconsPath}mobile_wireframing_bg2.png';
+  static const meetingWithClientTaskBgImg = '${_iconsPath}meeting_with_client_bg.png';
+  static const financeDashboardTaskBgImg = '${_iconsPath}finance_dashboard_bg.png';
+
 }
 

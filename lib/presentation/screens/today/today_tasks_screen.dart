@@ -59,12 +59,7 @@ class _TodayTasksScreenState extends State<TodayTasksScreen> {
                         for (final time in AppData.timelineTimes)
                           SizedBox(
                             height: 52,
-                            child: Text(
-                              time,
-                              textAlign: .center,
-                              style: AppTextStyles.timelineTime,
-                            ),
-                          ),
+                            child: Text(time, textAlign: .center, style: AppTextStyles.timelineTime,),),
                       ],
                     ),
                   ),

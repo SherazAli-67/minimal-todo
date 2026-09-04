@@ -28,3 +28,29 @@ and then use it where needed
 SvgPicture.asset(AppIcons.icDelete, colorFilter: .mode(Colors.black, .srcIn),
 
 6. Only use go_router for the routing as per the current structure
+
+7. Do not add comments to the code
+
+8. Note the followings
+
+instead of
+
+onSelected: (index) {
+                  setState(() {
+                    _selectedDayIndex = index;
+                  });
+                },
+
+use
+onSelected: (index)=> setState(()=> _selectedDayIndex = index),
+
+instead of
+
+ TimelineTaskCard(
+                            task: AppData.timelineTasks[i],
+                          ),
+
+use
+ TimelineTaskCard(task: AppData.timelineTasks[i],)
+
+If any code is possible in one-line, make it to one line

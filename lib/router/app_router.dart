@@ -1,6 +1,6 @@
 import 'package:go_router/go_router.dart';
-import 'package:minimal_todo/screens/home/home_screen.dart';
-import 'package:minimal_todo/screens/today/today_tasks_screen.dart';
+import '../presentation/screens/home/home_screen.dart';
+import '../presentation/screens/today/today_tasks_screen.dart';
 
 GoRouter router = GoRouter(
   initialLocation: NamedRoutes.home.routeName,

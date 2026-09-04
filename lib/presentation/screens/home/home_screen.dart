@@ -4,10 +4,10 @@ import 'package:minimal_todo/constants/string_constant.dart';
 import 'package:minimal_todo/core/app_data.dart';
 import 'package:minimal_todo/core/app_textstyles.dart';
 import 'package:minimal_todo/router/app_router.dart';
-import 'package:minimal_todo/screens/home/widgets/category_card.dart';
-import 'package:minimal_todo/screens/home/widgets/home_header.dart';
-import 'package:minimal_todo/screens/home/widgets/ongoing_task_card.dart';
-import 'package:minimal_todo/screens/home/widgets/search_filter_bar.dart';
+import 'widgets/category_card.dart';
+import 'widgets/home_header.dart';
+import 'widgets/ongoing_task_card.dart';
+import 'widgets/search_filter_bar.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -43,11 +43,7 @@ class HomeScreen extends StatelessWidget {
                 scrollDirection: .horizontal,
                 itemCount: AppData.categories.length,
                 separatorBuilder: (_, _) => const SizedBox(width: 16),
-                itemBuilder: (context, index) {
-                  return CategoryCard(
-                    category: AppData.categories[index],
-                  );
-                },
+                itemBuilder: (context, index) =>  CategoryCard(category: AppData.categories[index],),
               ),
             ),
             const SizedBox(height: 35),
@@ -80,9 +76,7 @@ class HomeScreen extends StatelessWidget {
                     if (i > 0) const SizedBox(height: 28),
                     GestureDetector(
                       onTap: () => context.push(NamedRoutes.today.routeName),
-                      child: OngoingTaskCard(
-                        task: AppData.ongoingTasks[i],
-                      ),
+                      child: OngoingTaskCard(task: AppData.ongoingTasks[i],),
                     ),
                   ],
                 ],

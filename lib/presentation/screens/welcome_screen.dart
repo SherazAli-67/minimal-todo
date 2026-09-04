@@ -37,9 +37,9 @@ class WelcomeScreen extends StatelessWidget {
       crossAxisAlignment: .start,
       spacing: 16,
       children: [
-        Text(StringConst.appTitle, style: AppTextStyles.welcomeBrand),
-        Text(StringConst.welcomeHeadline, style: AppTextStyles.welcomeHeadline),
-        Text(StringConst.welcomeSubtitle, style: AppTextStyles.welcomeSubtitle),
+        //StringConst.appTitle welcomeBran
+        //welcomeHeadline welcomHeadline
+        //welcomeSubtitle welcomeSubtitle
       ],
     );
   }
@@ -54,7 +54,7 @@ class WelcomeScreen extends StatelessWidget {
             Positioned(
               left: i * 48.0,
               top: i * 18.0,
-              child: _buildPreviewCardItemWidget(card: AppData.welcomePreviewCards[i],),
+              child: _buildPreviewCardItemWidget(card: AppData.welcomePreviewCards[i])
             ),
         ],
       ),
@@ -64,17 +64,17 @@ class WelcomeScreen extends StatelessWidget {
     return Container(
       width: 157,
       height: 140,
-      padding: .all(21),
+      // padding: .all(21),
       decoration: BoxDecoration(
-        color: card.backgroundColor,
-        borderRadius: .circular(20),
+        // color: card.backgroundColor,
+        // borderRadius: .circular(20),
       ),
       child: Column(
         crossAxisAlignment: .start,
         spacing: 8,
         children: [
-          Text(card.title, style: AppTextStyles.categoryTitle),
-          Text(card.taskCountLabel, style: AppTextStyles.categoryCount),
+          //card.title categoryTitle
+          //card.taskCountLabel
         ],
       ),
     );
@@ -85,21 +85,23 @@ class WelcomeScreen extends StatelessWidget {
       spacing: 16,
       children: [
         GestureDetector(
-          onTap: () => context.go(NamedRoutes.home.routeName),
+          // onTap: () => context.go(NamedRoutes.home.routeName),
           child: Container(
             width: double.infinity,
             height: 58,
             alignment: .center,
             decoration: BoxDecoration(
-              color: AppColors.black,
-              borderRadius: .circular(100),
+              //color black
+              //borderRadius: 99
             ),
-            child: Text(StringConst.getStarted, style: AppTextStyles.welcomeCta),
+            child: const SizedBox()
+            //getStarted welcomeCta
           ),
         ),
         GestureDetector(
-          onTap: () => context.go(NamedRoutes.home.routeName),
-          child: Text(StringConst.skip, style: AppTextStyles.seeAll),
+          // onTap: () => context.go(NamedRoutes.home.routeName),
+          child: const SizedBox()
+          //skip seeAll
         ),
       ],
     );

@@ -30,27 +30,15 @@ class _TodayTasksScreenState extends State<TodayTasksScreen> {
     return Scaffold(
       body: SafeArea(
         child: ListView(
-          padding: .only(top: 12, bottom: 24),
+          padding: .only(top: 12, bottom: 24, left: 24, right: 24),
           children: [
-            Padding(
-              padding: .symmetric(horizontal: 25),
-              child: _buildHeaderWidget(context),
-            ),
+            _buildHeaderWidget(context),
             const SizedBox(height: 24),
-            Padding(
-              padding: .symmetric(horizontal: 25),
-              child: _buildDateRowWidget(),
-            ),
+            _buildDateRowWidget(),
             const SizedBox(height: 24),
-            Padding(
-              padding: .symmetric(horizontal: 25),
-              child: _buildWeekDateStripWidget(),
-            ),
+            _buildWeekDateStripWidget(),
             const SizedBox(height: 28),
-            Padding(
-              padding: .symmetric(horizontal: 24),
-              child: _buildTimelineWidget(),
-            ),
+            _buildTimelineWidget(),
           ],
         ),
       ),
@@ -62,26 +50,29 @@ class _TodayTasksScreenState extends State<TodayTasksScreen> {
       children: [
         GestureDetector(
           onTap: () => context.pop(),
-          child: SvgPicture.asset(AppIcons.icBack, width: 24, height: 24, colorFilter: .mode(AppColors.inkMuted, .srcIn)),
+          //icBack, colo: inkMute
+          child: const SizedBox()
         ),
         const Expanded(
-          child: Text(StringConst.todayTasks, textAlign: .center, style: AppTextStyles.todayAppBar),
+          //todayTasks, style: todayAppBar, align: center
+          child:  SizedBox()
         ),
         Container(
           width: 45,
           height: 45,
           decoration: BoxDecoration(
-            color: AppColors.avatarFallback,
-            shape: .circle,
+            // color: AppColors.avatarFallback,
+            // shape: .circle,
             boxShadow: [
-              BoxShadow(
+             /* BoxShadow(
                 color: AppColors.black.withValues(alpha: 0.04),
                 blurRadius: 8,
                 offset: const Offset(0, 2),
-              ),
+              ),*/
             ],
           ),
-          child: const Icon(Icons.person_outline, color: AppColors.inkMuted, size: 24),
+          //ic: Icons.person_outline, color: inkMuted
+          child: const SizedBox()
         ),
       ],
     );
@@ -95,8 +86,8 @@ class _TodayTasksScreenState extends State<TodayTasksScreen> {
             crossAxisAlignment: .start,
             spacing: 12,
             children: [
-              Text(StringConst.todayDate, style: AppTextStyles.greeting),
-              Text(StringConst.tasksToday, style: AppTextStyles.tasksToday),
+              //todayDate, style: greeting
+              //tasksToday, style: tasksToday
             ],
           ),
         ),
@@ -106,8 +97,10 @@ class _TodayTasksScreenState extends State<TodayTasksScreen> {
             width: 58,
             height: 58,
             alignment: .center,
-            decoration: const BoxDecoration(color: AppColors.calendarButton, shape: .circle),
-            child: SvgPicture.asset(AppIcons.icCalendar, width: 24, height: 24),
+
+            // decoration: const BoxDecoration(color: AppColors.calendarButton, shape: .circle),
+            //icCalendar, height: 24
+            child: const SizedBox()
           ),
         ),
       ],
@@ -139,14 +132,15 @@ class _TodayTasksScreenState extends State<TodayTasksScreen> {
       mainAxisAlignment: .center,
       children: [
         Text(
-          weekDay.dayLabel,
+          //weekDay.label,
+          '',
           maxLines: 1,
           softWrap: false,
           style: isSelected ? AppTextStyles.weekDayNumberSelected : AppTextStyles.weekDayNumber,
         ),
         SizedBox(height: isSelected ? 8 : 10),
         Text(
-          weekDay.label,
+          '',
           maxLines: 1,
           softWrap: false,
           style: isSelected ? AppTextStyles.weekDayLabelSelected : AppTextStyles.weekDayLabel,
@@ -156,7 +150,7 @@ class _TodayTasksScreenState extends State<TodayTasksScreen> {
           Container(
             width: 8,
             height: 8,
-            decoration: const BoxDecoration(color: AppColors.white, shape: .circle),
+            // decoration: const BoxDecoration(color: AppColors.white, shape: .circle),
           ),
         ],
       ],
@@ -170,7 +164,7 @@ class _TodayTasksScreenState extends State<TodayTasksScreen> {
               height: 90,
               alignment: .center,
               decoration: BoxDecoration(
-                color: AppColors.selectedDay,
+                // color: AppColors.selectedDay,
                 borderRadius: .circular(128),
               ),
               child: content,
@@ -190,7 +184,8 @@ class _TodayTasksScreenState extends State<TodayTasksScreen> {
               for (final time in AppData.timelineTimes)
                 SizedBox(
                   height: 52,
-                  child: Text(time, textAlign: .center, style: AppTextStyles.timelineTime),
+                  //time, align: center, style: timelineTime
+                  child: const SizedBox()
                 ),
             ],
           ),
@@ -214,7 +209,7 @@ class _TodayTasksScreenState extends State<TodayTasksScreen> {
       height: task.cardHeight,
       clipBehavior: .hardEdge,
       decoration: BoxDecoration(
-        color: task.backgroundColor,
+        // color: task.backgroundColor,
         borderRadius: .circular(20),
       ),
       child: Stack(
@@ -222,7 +217,8 @@ class _TodayTasksScreenState extends State<TodayTasksScreen> {
           Positioned(
             right: -24,
             bottom: -36,
-            child: Image.asset(task.bgImage, height: 145),
+            //img: task.bgImage, height: 145
+            child: const SizedBox()
           ),
           Padding(
             padding: .only(left: 10, top: 14, right: 10, bottom: 14),
@@ -243,11 +239,11 @@ class _TodayTasksScreenState extends State<TodayTasksScreen> {
                                   width: 30,
                                   height: 30,
                                   decoration: BoxDecoration(
-                                    color: task.members[i].bgColor,
-                                    shape: .circle,
-                                    border: .all(color: task.backgroundColor, width: 2),
+                                    // color: task.members[i].bgColor,
+                                    // shape: .circle,
+                                    // border: .all(color: task.backgroundColor, width: 2),
                                   ),
-                                  child: ClipOval(child: Image.network(task.members[i].imageUrl)),
+                                  // child: ClipOval(child: Image.network(task.members[i].imageUrl)),
                                 ),
                               ),
                           ],
@@ -258,13 +254,13 @@ class _TodayTasksScreenState extends State<TodayTasksScreen> {
                       width: 35,
                       height: 35,
                       alignment: .center,
-                      decoration: const BoxDecoration(color: AppColors.white, shape: .circle),
-                      child: SvgPicture.asset(AppIcons.icPhone, width: 14, height: 14, colorFilter: .mode(AppColors.inkMuted, .srcIn)),
+                      // decoration: const BoxDecoration(color: AppColors.white, shape: .circle),
+                      //icPhone, height: 14, color: inkMuted
                     ),
                   ],
                 ),
                 const Spacer(),
-                Text(task.title, style: AppTextStyles.timelineCardTitle),
+                //task.title, timelineCardTitle
               ],
             ),
           ),

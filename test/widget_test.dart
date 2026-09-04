@@ -29,7 +29,7 @@ void main() {
     await tester.pump(const Duration(milliseconds: 300));
     await clearPendingExceptions(tester);
 
-    expect(find.text('${StringConst.greetingPrefix}${StringConst.userName}'), findsOneWidget);
+    expect(find.text('${StringConst.greetingPrefix}${StringConst.devName}'), findsOneWidget);
     expect(find.text(StringConst.categories), findsOneWidget);
     expect(find.text(StringConst.ongoingTasks), findsOneWidget);
     expect(find.text('Wallet App Design'), findsOneWidget);

@@ -1,7 +1,7 @@
 class StringConst {
   static const appTitle = 'Minimal Todo';
   static const appFontFamily = 'Urbanist';
-  static const userName = 'Saad Shaikh';
+  static const devName = 'Sheraz Ali';
   static const greetingPrefix = 'Hi ';
   static const pendingTasks = '06 task pending';
   static const searchHint = 'Search';

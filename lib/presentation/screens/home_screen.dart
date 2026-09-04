@@ -28,7 +28,7 @@ class HomeScreen extends StatelessWidget {
                 children: [
                   _buildHeaderWidget(),
                   _buildSearchFilterBarWidget(),
-                  Text(StringConst.categories, style: AppTextStyles.sectionTitle),
+                  //categories sectionTitle
                 ],
               ),
             ),
@@ -58,8 +58,8 @@ class HomeScreen extends StatelessWidget {
             crossAxisAlignment: .start,
             spacing: 8,
             children: [
-              Text('${StringConst.greetingPrefix}${StringConst.userName}', style: AppTextStyles.greeting),
-              Text(StringConst.pendingTasks, style: AppTextStyles.pending),
+              //${StringConst.greetingPrefix}${StringConst.devName} greeting
+              //pendingTasks pending
             ],
           ),
         ),
@@ -67,17 +67,19 @@ class HomeScreen extends StatelessWidget {
           width: 45,
           height: 45,
           decoration: BoxDecoration(
-            color: AppColors.avatarFallback,
-            shape: .circle,
+            // color: AppColors.avatarFallback,
+            // shape: .circle,
             boxShadow: [
-              BoxShadow(
+            /*  BoxShadow(
                 color: AppColors.black.withValues(alpha: 0.04),
                 blurRadius: 8,
                 offset: const Offset(0, 2),
-              ),
+              ),*/
             ],
           ),
-          child: const Icon(Icons.person_outline, color: AppColors.inkMuted, size: 24),
+          //Icons.person_outline inkMuted 24
+          child: const SizedBox(),
+
         ),
       ],
     );
@@ -85,33 +87,33 @@ class HomeScreen extends StatelessWidget {
 
   Widget _buildSearchFilterBarWidget() {
     return Row(
+      spacing: 16,
       children: [
         Expanded(
           child: Container(
-            height: 58,
-            padding: .symmetric(horizontal: 20),
+            padding: .symmetric(horizontal: 20, vertical: 17),
             decoration: BoxDecoration(
-              color: AppColors.searchFill,
-              borderRadius: .circular(100),
+              //color searchFill
+              // radius 99
             ),
             child: Row(
               spacing: 10,
               children: [
-                SvgPicture.asset(AppIcons.icSearch, width: 24, height: 24, colorFilter: .mode(AppColors.muted600, .srcIn)),
-                Text(StringConst.searchHint, style: AppTextStyles.searchHint),
+                //icSearch, muted600 color
+                //searchHint searchHint
               ],
             ),
           ),
         ),
-        const SizedBox(width: 16),
         GestureDetector(
           onTap: () {},
           child: Container(
-            width: 58,
-            height: 58,
             alignment: .center,
-            decoration: const BoxDecoration(color: AppColors.black, shape: .circle),
-            child: SvgPicture.asset(AppIcons.icFilter, width: 24, height: 24, colorFilter: .mode(AppColors.white, .srcIn)),
+            padding: .all(17),
+            //color black shape: circle
+            // decoration: const BoxDecoration(color: AppColors.black, shape: .circle),
+            //icFilter white
+            child: const SizedBox(),
           ),
         ),
       ],
@@ -136,8 +138,8 @@ class HomeScreen extends StatelessWidget {
       width: 157,
       height: 180,
       decoration: BoxDecoration(
-        color: category.backgroundColor,
-        borderRadius: .circular(20),
+        // color: category.backgroundColor,
+        // borderRadius: .circular(20),
       ),
       child: Stack(
         children: [
@@ -147,15 +149,16 @@ class HomeScreen extends StatelessWidget {
               crossAxisAlignment: .start,
               spacing: 8,
               children: [
-                Text(category.name, style: AppTextStyles.categoryTitle),
-                Text(category.taskCountLabel, style: AppTextStyles.categoryCount),
+                //category.name categoryTitle
+                //category.taskCountLabel categoryCount
               ],
             ),
           ),
           Positioned(
             bottom: 0,
             right: 0,
-            child: Image.asset(category.image, height: 100),
+            //category.image, height: 100
+            child: const SizedBox()
           ),
         ],
       ),
@@ -165,10 +168,12 @@ class HomeScreen extends StatelessWidget {
   Widget _buildOngoingHeaderWidget(BuildContext context) {
     return Row(
       children: [
-        const Expanded(child: Text(StringConst.ongoingTasks, style: AppTextStyles.sectionTitle)),
+        //ongoingTasks, style: sectionTitle
+        const Expanded(child:  SizedBox()),
         GestureDetector(
-          onTap: () => context.push(NamedRoutes.today.routeName),
-          child: Text(StringConst.seeAll, style: AppTextStyles.seeAll),
+          // onTap: () => context.push(NamedRoutes.today.routeName),
+          //seeAll, style: seeAl
+          child:  const SizedBox()
         ),
       ],
     );
@@ -190,10 +195,10 @@ class HomeScreen extends StatelessWidget {
   Widget _buildOngoingTaskCardWidget({required OngoingTask task}) {
     return Container(
       width: double.infinity,
-      padding: .symmetric(horizontal: 16, vertical: 20),
+      // padding: .symmetric(horizontal: 16, vertical: 20),
       decoration: BoxDecoration(
-        color: task.backgroundColor,
-        borderRadius: .circular(24),
+        // color: task.backgroundColor,
+        // borderRadius: .circular(24),
       ),
       child: Row(
         crossAxisAlignment: .start,
@@ -202,9 +207,9 @@ class HomeScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: .start,
               children: [
-                Text(task.title, style: AppTextStyles.taskTitle),
+                //task.title, style: taskTitle
                 const SizedBox(height: 14),
-                Text(StringConst.teamMembers, style: AppTextStyles.taskMeta),
+                //teamMembers, style: taskMeta
                 const SizedBox(height: 11),
                 Wrap(
                   spacing: 8,
@@ -213,10 +218,11 @@ class HomeScreen extends StatelessWidget {
                       Container(
                         width: 25,
                         height: 25,
-                        decoration: BoxDecoration(color: member.bgColor, shape: .circle),
+                        // decoration: BoxDecoration(color: member.bgColor, shape: .circle),
                         child: ClipRRect(
                           borderRadius: .circular(100),
-                          child: Image.network(member.imageUrl),
+                          //image.imageUrl
+                          child: const SizedBox()
                         ),
                       ),
                   ],
@@ -225,8 +231,8 @@ class HomeScreen extends StatelessWidget {
                 Row(
                   spacing: 4,
                   children: [
-                    SvgPicture.asset(AppIcons.icClock, width: 20, height: 20, colorFilter: .mode(AppColors.clock, .srcIn)),
-                    Text(task.timeRange, style: AppTextStyles.taskMeta),
+                    //icClock, height:20, colo: clock
+                    //task.timeRange, style: taskMeta
                   ],
                 ),
               ],
@@ -234,23 +240,24 @@ class HomeScreen extends StatelessWidget {
           ),
           Column(
             crossAxisAlignment: .end,
+            spacing: 48,
             children: [
               Container(
                 padding: .symmetric(horizontal: 12, vertical: 4),
                 decoration: BoxDecoration(
-                  color: AppColors.badge,
-                  borderRadius: .circular(96),
+                  // color: AppColors.badge,
+                  // borderRadius: .circular(96),
                 ),
-                child: Text(task.durationLabel, style: AppTextStyles.durationChip),
+                //task.durationLabel, style: durationChip
+                child: const SizedBox(),
               ),
-              const SizedBox(height: 48),
               SizedBox(
                 width: 56,
                 height: 56,
                 child: Stack(
                   alignment: .center,
                   children: [
-                    SizedBox.expand(
+                    /*SizedBox.expand(
                       child: CircularProgressIndicator(
                         value: task.progress,
                         strokeWidth: 5,
@@ -258,8 +265,8 @@ class HomeScreen extends StatelessWidget {
                         color: AppColors.badge,
                         strokeCap: .round,
                       ),
-                    ),
-                    Text(task.progressLabel, style: AppTextStyles.progress),
+                    ),*/
+                    //task.progressLabel, style: progress
                   ],
                 ),
               ),

@@ -29,6 +29,7 @@ class HomeScreen extends StatelessWidget {
                   _buildHeaderWidget(),
                   _buildSearchFilterBarWidget(),
                   //categories sectionTitle
+                  Text(StringConst.categories, style: AppTextStyles.sectionTitle,)
                 ],
               ),
             ),
@@ -59,6 +60,8 @@ class HomeScreen extends StatelessWidget {
             spacing: 8,
             children: [
               //${StringConst.greetingPrefix}${StringConst.devName} greeting
+              Text('${StringConst.greetingPrefix}${StringConst.devName}', style: AppTextStyles.greeting,),
+              Text(StringConst.pendingTasks, style: AppTextStyles.pending,)
               //pendingTasks pending
             ],
           ),
@@ -67,18 +70,18 @@ class HomeScreen extends StatelessWidget {
           width: 45,
           height: 45,
           decoration: BoxDecoration(
-            // color: AppColors.avatarFallback,
-            // shape: .circle,
+            color: AppColors.avatarFallback,
+            shape: .circle,
             boxShadow: [
-            /*  BoxShadow(
+                BoxShadow(
                 color: AppColors.black.withValues(alpha: 0.04),
                 blurRadius: 8,
                 offset: const Offset(0, 2),
-              ),*/
+              ),
             ],
           ),
           //Icons.person_outline inkMuted 24
-          child: const SizedBox(),
+          child: Icon(Icons.person)
 
         ),
       ],
@@ -94,11 +97,15 @@ class HomeScreen extends StatelessWidget {
             padding: .symmetric(horizontal: 20, vertical: 17),
             decoration: BoxDecoration(
               //color searchFill
+              color: AppColors.searchFill,
+              borderRadius: .circular(99)
               // radius 99
             ),
             child: Row(
               spacing: 10,
               children: [
+                SvgPicture.asset(AppIcons.icSearch, color: AppColors.muted600,),
+                Text(StringConst.searchHint, style: AppTextStyles.searchHint,)
                 //icSearch, muted600 color
                 //searchHint searchHint
               ],
@@ -111,9 +118,9 @@ class HomeScreen extends StatelessWidget {
             alignment: .center,
             padding: .all(17),
             //color black shape: circle
-            // decoration: const BoxDecoration(color: AppColors.black, shape: .circle),
+            decoration: const BoxDecoration(color: AppColors.black, shape: .circle),
             //icFilter white
-            child: const SizedBox(),
+            child: SvgPicture.asset(AppIcons.icFilter)
           ),
         ),
       ],
@@ -139,6 +146,8 @@ class HomeScreen extends StatelessWidget {
       height: 180,
       decoration: BoxDecoration(
         // color: category.backgroundColor,
+        color: category.backgroundColor,
+        borderRadius: .circular(20)
         // borderRadius: .circular(20),
       ),
       child: Stack(
@@ -150,15 +159,17 @@ class HomeScreen extends StatelessWidget {
               spacing: 8,
               children: [
                 //category.name categoryTitle
+                Text(category.name, style: AppTextStyles.categoryTitle,),
+                Text(category.taskCountLabel, style: AppTextStyles.categoryCount,)
                 //category.taskCountLabel categoryCount
               ],
             ),
           ),
           Positioned(
-            bottom: 0,
-            right: 0,
-            //category.image, height: 100
-            child: const SizedBox()
+              bottom: 0,
+              right: 0,
+              //category.image, height: 100
+              child: Image.asset(category.image, height: 100,)
           ),
         ],
       ),
@@ -169,11 +180,12 @@ class HomeScreen extends StatelessWidget {
     return Row(
       children: [
         //ongoingTasks, style: sectionTitle
+        Text(StringConst.ongoingTasks, style: AppTextStyles.sectionTitle,),
         const Expanded(child:  SizedBox()),
         GestureDetector(
-          // onTap: () => context.push(NamedRoutes.today.routeName),
+          onTap: () => context.push(NamedRoutes.today.routeName),
           //seeAll, style: seeAl
-          child:  const SizedBox()
+            child: Text(StringConst.seeAll, style: AppTextStyles.seeAll,)
         ),
       ],
     );
@@ -195,9 +207,10 @@ class HomeScreen extends StatelessWidget {
   Widget _buildOngoingTaskCardWidget({required OngoingTask task}) {
     return Container(
       width: double.infinity,
-      // padding: .symmetric(horizontal: 16, vertical: 20),
+      padding: .symmetric(horizontal: 16, vertical: 20),
       decoration: BoxDecoration(
-        // color: task.backgroundColor,
+        color: task.backgroundColor,
+        borderRadius: .circular(24)
         // borderRadius: .circular(24),
       ),
       child: Row(
@@ -208,8 +221,10 @@ class HomeScreen extends StatelessWidget {
               crossAxisAlignment: .start,
               children: [
                 //task.title, style: taskTitle
+                Text(task.title, style: AppTextStyles.taskTitle,),
                 const SizedBox(height: 14),
                 //teamMembers, style: taskMeta
+                Text(StringConst.teamMembers, style: AppTextStyles.taskMeta,),
                 const SizedBox(height: 11),
                 Wrap(
                   spacing: 8,
@@ -218,11 +233,11 @@ class HomeScreen extends StatelessWidget {
                       Container(
                         width: 25,
                         height: 25,
-                        // decoration: BoxDecoration(color: member.bgColor, shape: .circle),
+                        decoration: BoxDecoration(color: member.bgColor, shape: .circle),
                         child: ClipRRect(
-                          borderRadius: .circular(100),
-                          //image.imageUrl
-                          child: const SizedBox()
+                            borderRadius: .circular(100),
+                            //image.imageUrl
+                            child: Image.network(member.imageUrl)
                         ),
                       ),
                   ],
@@ -232,7 +247,9 @@ class HomeScreen extends StatelessWidget {
                   spacing: 4,
                   children: [
                     //icClock, height:20, colo: clock
+                    SvgPicture.asset(AppIcons.icClock, height: 24, color: AppColors.clock),
                     //task.timeRange, style: taskMeta
+                    Text(task.timeRange)
                   ],
                 ),
               ],
@@ -245,11 +262,12 @@ class HomeScreen extends StatelessWidget {
               Container(
                 padding: .symmetric(horizontal: 12, vertical: 4),
                 decoration: BoxDecoration(
-                  // color: AppColors.badge,
+                  color: AppColors.badge,
+                  borderRadius: .circular(96)
                   // borderRadius: .circular(96),
                 ),
                 //task.durationLabel, style: durationChip
-                child: const SizedBox(),
+                child: Text(task.durationLabel, style: AppTextStyles.durationChip,)
               ),
               SizedBox(
                 width: 56,
@@ -257,7 +275,7 @@ class HomeScreen extends StatelessWidget {
                 child: Stack(
                   alignment: .center,
                   children: [
-                    /*SizedBox.expand(
+                    SizedBox.expand(
                       child: CircularProgressIndicator(
                         value: task.progress,
                         strokeWidth: 5,
@@ -265,8 +283,9 @@ class HomeScreen extends StatelessWidget {
                         color: AppColors.badge,
                         strokeCap: .round,
                       ),
-                    ),*/
+                    ),
                     //task.progressLabel, style: progress
+                    Text(task.progressLabel, style: AppTextStyles.progress,)
                   ],
                 ),
               ),

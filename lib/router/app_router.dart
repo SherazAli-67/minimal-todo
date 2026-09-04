@@ -4,7 +4,7 @@ import '../presentation/screens/today_tasks_screen.dart';
 import '../presentation/screens/welcome_screen.dart';
 
 GoRouter router = GoRouter(
-  initialLocation: NamedRoutes.today.routeName,
+  initialLocation: NamedRoutes.welcome.routeName,
   routes: [
     GoRoute(path: NamedRoutes.welcome.routeName, builder: (_, _) => const WelcomeScreen()),
     GoRoute(path: NamedRoutes.home.routeName, builder: (_, _) => const HomeScreen()),

@@ -49,30 +49,32 @@ class _TodayTasksScreenState extends State<TodayTasksScreen> {
     return Row(
       children: [
         GestureDetector(
-          onTap: () => context.pop(),
-          //icBack, colo: inkMute
-          child: const SizedBox()
+            onTap: () => context.pop(),
+            //icBack, colo: inkMute
+            child: SvgPicture.asset(AppIcons.icBack, color: AppColors.inkMuted,)
         ),
         const Expanded(
           //todayTasks, style: todayAppBar, align: center
-          child:  SizedBox()
+            child: Text(StringConst.todayTasks, style: AppTextStyles.todayAppBar, textAlign: .center)
         ),
         Container(
-          width: 45,
-          height: 45,
-          decoration: BoxDecoration(
-            // color: AppColors.avatarFallback,
-            // shape: .circle,
-            boxShadow: [
-             /* BoxShadow(
+            width: 45,
+            height: 45,
+            decoration: BoxDecoration(
+              // color: AppColors.avatarFallback,
+              color: AppColors.avatarFallback,
+              shape: .circle,
+              // shape: .circle,
+              boxShadow: [
+                 BoxShadow(
                 color: AppColors.black.withValues(alpha: 0.04),
                 blurRadius: 8,
                 offset: const Offset(0, 2),
-              ),*/
-            ],
-          ),
-          //ic: Icons.person_outline, color: inkMuted
-          child: const SizedBox()
+              ),
+              ],
+            ),
+            //ic: Icons.person_outline, color: inkMuted
+            child: Icon(Icons.person)
         ),
       ],
     );
@@ -87,20 +89,22 @@ class _TodayTasksScreenState extends State<TodayTasksScreen> {
             spacing: 12,
             children: [
               //todayDate, style: greeting
+              Text(StringConst.todayDate, style: AppTextStyles.greeting,),
               //tasksToday, style: tasksToday
+              Text(StringConst.tasksToday, style: AppTextStyles.tasksToday,)
             ],
           ),
         ),
         GestureDetector(
           onTap: () {},
           child: Container(
-            width: 58,
-            height: 58,
-            alignment: .center,
+              width: 58,
+              height: 58,
+              alignment: .center,
 
-            // decoration: const BoxDecoration(color: AppColors.calendarButton, shape: .circle),
-            //icCalendar, height: 24
-            child: const SizedBox()
+              decoration: const BoxDecoration(color: AppColors.calendarButton, shape: .circle),
+              //icCalendar, height: 24
+              child: SvgPicture.asset(AppIcons.icCalendar, height: 24,)
           ),
         ),
       ],
@@ -132,15 +136,14 @@ class _TodayTasksScreenState extends State<TodayTasksScreen> {
       mainAxisAlignment: .center,
       children: [
         Text(
-          //weekDay.label,
-          '',
+          weekDay.label,
           maxLines: 1,
           softWrap: false,
           style: isSelected ? AppTextStyles.weekDayNumberSelected : AppTextStyles.weekDayNumber,
         ),
         SizedBox(height: isSelected ? 8 : 10),
         Text(
-          '',
+          weekDay.dayLabel,
           maxLines: 1,
           softWrap: false,
           style: isSelected ? AppTextStyles.weekDayLabelSelected : AppTextStyles.weekDayLabel,
@@ -150,7 +153,7 @@ class _TodayTasksScreenState extends State<TodayTasksScreen> {
           Container(
             width: 8,
             height: 8,
-            // decoration: const BoxDecoration(color: AppColors.white, shape: .circle),
+            decoration: const BoxDecoration(color: AppColors.white, shape: .circle),
           ),
         ],
       ],
@@ -160,15 +163,16 @@ class _TodayTasksScreenState extends State<TodayTasksScreen> {
       onTap: onTap,
       child: isSelected
           ? Container(
-              width: 46,
-              height: 90,
-              alignment: .center,
-              decoration: BoxDecoration(
-                // color: AppColors.selectedDay,
-                borderRadius: .circular(128),
-              ),
-              child: content,
-            )
+        width: 46,
+        height: 90,
+        alignment: .center,
+        decoration: BoxDecoration(
+          // color: AppColors.selectedDay,
+          color: AppColors.selectedDay,
+          borderRadius: .circular(128),
+        ),
+        child: content,
+      )
           : content,
     );
   }
@@ -183,9 +187,9 @@ class _TodayTasksScreenState extends State<TodayTasksScreen> {
             children: [
               for (final time in AppData.timelineTimes)
                 SizedBox(
-                  height: 52,
-                  //time, align: center, style: timelineTime
-                  child: const SizedBox()
+                    height: 52,
+                    //time, align: center, style: timelineTime
+                    child: Text(time, style: AppTextStyles.timelineTime, textAlign: .center)
                 ),
             ],
           ),
@@ -210,15 +214,16 @@ class _TodayTasksScreenState extends State<TodayTasksScreen> {
       clipBehavior: .hardEdge,
       decoration: BoxDecoration(
         // color: task.backgroundColor,
+        color: task.backgroundColor,
         borderRadius: .circular(20),
       ),
       child: Stack(
         children: [
           Positioned(
-            right: -24,
-            bottom: -36,
-            //img: task.bgImage, height: 145
-            child: const SizedBox()
+              right: -24,
+              bottom: -36,
+              //img: task.bgImage, height: 145
+              child: Image.asset(task.bgImage, height: 145,)
           ),
           Padding(
             padding: .only(left: 10, top: 14, right: 10, bottom: 14),
@@ -239,11 +244,11 @@ class _TodayTasksScreenState extends State<TodayTasksScreen> {
                                   width: 30,
                                   height: 30,
                                   decoration: BoxDecoration(
-                                    // color: task.members[i].bgColor,
-                                    // shape: .circle,
-                                    // border: .all(color: task.backgroundColor, width: 2),
+                                    color: task.members[i].bgColor,
+                                    shape: .circle,
+                                    border: .all(color: task.backgroundColor, width: 2),
                                   ),
-                                  // child: ClipOval(child: Image.network(task.members[i].imageUrl)),
+                                  child: ClipOval(child: Image.network(task.members[i].imageUrl)),
                                 ),
                               ),
                           ],
@@ -254,13 +259,14 @@ class _TodayTasksScreenState extends State<TodayTasksScreen> {
                       width: 35,
                       height: 35,
                       alignment: .center,
-                      // decoration: const BoxDecoration(color: AppColors.white, shape: .circle),
-                      //icPhone, height: 14, color: inkMuted
+                      decoration: BoxDecoration(color: Colors.white, shape: .circle),
+                      child: SvgPicture.asset(AppIcons.icPhone, height: 14, color: AppColors.inkMuted),
                     ),
                   ],
                 ),
                 const Spacer(),
                 //task.title, timelineCardTitle
+                Text(task.title, style: AppTextStyles.timelineCardTitle,)
               ],
             ),
           ),
